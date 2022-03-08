@@ -112,27 +112,27 @@ self.ngen        = 200                                        # Number of active
 self.nskip       = 60                                         # Number of inactive generations
 
  # Enrichment search varibles
-self.enr_path    = os.getcwd() + '/enr_search'
-self.enr_min     = 0.01
-self.enr_max     = 0.2
-self.enr_eps     = 1e-9
-self.rho_tgt     = 100.0
-self.rho_eps     = 100.0
+self.enr_path    = os.getcwd() + '/enr_search'                # Directory to run enrichment search in
+self.enr_min     = 0.01                                       # Minimum enrichment for the calculation
+self.enr_max     = 0.2                                        # Maximum enrichment for the calculation
+self.enr_eps     = 1e-9                                       # Minimum difference between enrichment values
+self.rho_tgt     = 100.0                                      # Target excess reactivity
+self.rho_eps     = 100.0                                      # Allowable difference in reacitvity and target reactivity
 
 # refuel rate variales
-self.refuel_path = os.getcwd() + '/refuel'
-self.refuel_enr  = .1
-self.refuel_min  = 1e-10
-self.refuel_max  = 1e-5
-self.refuel_eps  = 1e-9
-self.k_diff_tgt  = 0.003
-self.k_diff_eps  = 0.003
+self.refuel_path = os.getcwd() + '/refuel'                    # Directory to run refuel calculation in
+self.refuel_enr  = .1                                         # Enrichment of the refuel salt
+self.refuel_min  = 1e-10                                      # Minimum refuel rate value
+self.refuel_max  = 1e-5                                       # Maximum refuel rate value
+self.refuel_eps  = 1e-9                                       # Minimum difference between refuel rates
+self.k_diff_tgt  = 0.003                                      # Target excess reactivity
+self.k_diff_eps  = 0.003                                      # Allowable difference in reactivity and target reactivity
 
 # feedback coefficient variables
-self.feedback_path  = os.getcwd() + '/feedback'
-self.feedback_temps = [800.0, 850.0, 900.0, 950.0, 1000.0]    #
-self.base_temp      = 900.0
-self.burnup_steps   = 72
+self.feedback_path  = os.getcwd() + '/feedback'               # Directory to run feedback calculation in
+self.feedback_temps = [800.0, 850.0, 900.0, 950.0, 1000.0]    # List of temperaures used in the feedback calculation
+self.base_temp      = 900.0                                   # Operational Temperature of the Reactor
+self.burnup_steps   = 72                                      # Total number of burn-up steps used in the model
 ```
 
 ### Object Methods
