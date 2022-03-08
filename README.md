@@ -29,7 +29,7 @@ nert.full_build_run()
 
 ### Object Attributes
 
-| Variable     | Default Value | Place Holder |
+| Variable     | Default Value | Place Holder                            |
 | ------------ | ------------- | ------------ |
 | self.deck_name | 'nerthus' | Serpent input file name |
 
