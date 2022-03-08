@@ -36,23 +36,30 @@ self.deck_name         = 'nerthus'                          # Serpent input file
 self.qsub_name         = 'run.sh'                           # Shell file name which runs SERPENT
 self.nuc_libs          = 'ENDF7'                            # Nuclear data library
 self.fs_lib            = '09c'                              # Cross section temperature selection for fuel salt
-self.gr_lib            = '09c'                              # XS temp. selection for graphite
-self.lib               = '09c'                              # XS temp. selection for other materials
+self.gr_lib            = '09c'                              # Cross section temperature selection for graphite
+self.lib               = '09c'                              # Cross section temperature selection for other materials
 self.histories         = 20000                              # Number of histories to run per generation
 self.ngen              = 200                                # Number of active generations
 self.nskip             = 60                                 # Number of inactive generations
-self.queue             = 'fill'                             # NECluster torque queue ('local' to run on your machine)
+self.queue             = 'fill'                             # Torque queue ('local' to run on your machine)
 self.ompcores          = 8                                  # OMP cores used when running SERPENT
 self.memory            = 20                                 # Memory in GB requested for node
 self.thermal_expansion = True                               # Bool to include thermal expansion; if False, reactor is modeled at 900K
 self.refuel            = refuel                             # Bool to run burnup calculation
-self.feedback          = False                              # Bool to use materials card or restart file
+self.feedback          = False                              # Bool to use restart file
 self.restart_file      = self.deck_name+".wrk"              # Name of restart file
-self.feedback_index    = 0                                  # index of burnstep to read material definitions from
+self.feedback_index    = 0                                  # Index of burnup step to read material definitions from
 self.do_plots          = False                              # Bool to plot core
 self.deck_path         = os.getcwd() + f'/{self.deck_name}' # Directory where SERPENT is ran
 self.add_to_deck       = ""                                 # Additional Serpent inputs you want to add to the deck
 self.burn_steps        = [[2, 0.0208], [1, 0.9584], [1, 2], [1, 4], [22, 7], [44, 30]] # depletion steps  
+self.control_rods      = {0:0, 1:0, 2:0, 3:0}               # 0:center, 1:top, 2:bottom left, 3:bottom right; 0:fully removed, 1:fully inserted
+self.fs_vol            = 13670000 if self.refuel else None  # Fuel salt volume if refueling
+self.fs_dens_tempK     = 900.0                              # Fuel salt temp. used for density calc. [K]
+self.fs_mat_tempK      = 900.0                              # Fuel salt temp. used for material XS [K]
+self.mod_tempK         = 950.0                              # Graphite temp.
+self.mod_boron         = 2e-6                               # Boron in graphite (2ppm default)
+self.refuel_rate       = 1e-9                               # Refuel rate of the reactor
 
 
 ```
