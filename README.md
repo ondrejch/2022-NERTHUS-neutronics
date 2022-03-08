@@ -37,7 +37,10 @@ nert.full_build_run()
 
 
 ```python
-self.fs_lib = '09c'     # Cross section temperature selection for fuel salt
+self.deck_name = 'nerthus'             # SERPENT input file name
+self.qsub_name = 'run.sh'              # Shell file name which runs SERPENT
+self.nuc_libs  = 'ENDF7'               # Nuclear data library
+self.fs_lib    = '09c'                 # Cross section temperature selection for fuel salt
 ```
 
 
