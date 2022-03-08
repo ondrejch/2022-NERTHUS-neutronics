@@ -27,6 +27,12 @@ nert = serpDeck(fuel_salt='flibe', enr=0.02, refuel_salt='nabe', enr_ref=0.1, re
 nert.full_build_run()
 ```
 
+### Object Attributes
+
+| Variable     | Default Value | Place Holder |
+| ------------ | ------------- | ------------ |
+| self.deck_name | 'nerthus' | Serpent input file name |
+
 
 
 
