@@ -73,6 +73,11 @@ There is not yet support for partial insertion of control rods in the NERTHUS mo
 
 ### Object Methods
 
+
+| Method | Purpose |
+| ------ | ------- |
+| `save_deck()` | Writes the Serpent Input to the specified directory |
+
 ```python
 def save_deck()
 def save_qsub_file()
