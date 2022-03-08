@@ -79,8 +79,10 @@ There is not yet support for partial insertion of control rods in the NERTHUS mo
 | `save_deck()`      | Writes the Serpent Input to the specified directory                               |
 | `save_qsub_file()` | Writes the shell file to run the model to the specified directory                 |
 | `run_deck()`       | Runs the model                                                                    |
-| `full_build_run()` | Saves the deck and qsub file, and runs the deck (a combination of the previous 3) |
+| `full_build_run()` | Saves the deck and shell file, and runs the deck (a combination of the previous 3)|
 | `get_results()`    | stores the results of a run into object attributes                                |
 | `cleanup()`        | removes the directory and all files in the directory the model was run            | 
+
+Note: the `get_results()` method retrieves the criticality constant, neutron generation time and the total and delayed neutron fractions which are stored in `self.k`, `self.ngt`, `self.beta_tot`, and `self.betas`, respectfully. When running the model without depletion, the variables are a list with the first value being the value returned from serpent, and the second value being the associated error. When run with depletion, each value is a list of lists where each index corresponds to a depletion step.
 
 
