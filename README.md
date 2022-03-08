@@ -104,49 +104,38 @@ Note: The refuel rate and feedback calculations can take a while to run and subm
 ### Object Attributes
 
 ```python
-self.fuel_salt:str = fuel_salt
-self.refuel_salt:str = refuel_salt
-self.queue:str = 'fill'
-self.memory:int = 30
-self.ompcores:int = 8
-self.histories:int = 20000
-self.ngen:int = 200
-self.nskip:int = 60
+self.queue       = 'fill'                                     # Torque queue
+self.memory      = 30                                         # Memory in GB requested for job
+self.ompcores    = 8                                          # Number of OMP cores to run job with
+self.histories   = 20000                                      # Number of histories per generation
+self.ngen        = 200                                        # Number of active generations
+self.nskip       = 60                                         # Number of inactive generations
 
  # Enrichment search varibles
-self.enr_path:str = os.getcwd() + '/enr_search'
-self.enr_min:float = 0.01
-self.enr_max:float = 0.2
-self.enr_eps:float = 1e-9
-self.rho_tgt:float = 100.0
-self.rho_eps:float = 100.0
-self.conv_enr:float = None
-self.RhoData = namedtuple("rhoData", 'enr rho rho_err')
-self.rholist:list = []
-self.iter_max:int  = 20
+self.enr_path    = os.getcwd() + '/enr_search'
+self.enr_min     = 0.01
+self.enr_max     = 0.2
+self.enr_eps     = 1e-9
+self.rho_tgt     = 100.0
+self.rho_eps     = 100.0
 
 # refuel rate variales
-self.refuel_path:str = os.getcwd() + '/refuel'
-self.refuel_enr:float = .1
-self.refuel_min:float = 1e-10
-self.refuel_max:float = 1e-5
-self.refuel_eps:float = 1e-9
-self.k_diff_tgt:float = 0.003
-self.k_diff_eps:float = 0.003
-self.refuelData = namedtuple("refuelData", 'rate k k_err')
-self.refuel_list:list = []
-self.refuel_iter:int = 20
+self.refuel_path = os.getcwd() + '/refuel'
+self.refuel_enr  = .1
+self.refuel_min  = 1e-10
+self.refuel_max  = 1e-5
+self.refuel_eps  = 1e-9
+self.k_diff_tgt  = 0.003
+self.k_diff_eps  = 0.003
 
 # feedback coefficient variables
-self.feedback_path = os.getcwd() + '/feedback'
-self.feedback_temps:list = [800.0, 850.0, 900.0, 950.0, 1000.0]
-self.base_temp:float = 900.0
-self.feedback_runs:dict = {}
-self.burnup_steps:int = 72
-self.smoothing_window:int = 11
+self.feedback_path  = os.getcwd() + '/feedback'
+self.feedback_temps = [800.0, 850.0, 900.0, 950.0, 1000.0]    #
+self.base_temp      = 900.0
+self.burnup_steps   = 72
 ```
 
-### Object Method
+### Object Methods
 
 
 
