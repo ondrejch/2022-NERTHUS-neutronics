@@ -146,6 +146,7 @@ self.burnup_steps:int = 72
 self.smoothing_window:int = 11
 ```
 
+### Object Method
 
 
 
