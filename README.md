@@ -10,11 +10,14 @@ The deck.py script contains the model for NERTHUS. It is designed to write and r
 ```python
 from deck import serpDeck
 
+# run the deck, get the results, print k_eff
 nert = serpDeck()
 nert.full_build_run()
 nert.get_results()
 print(f"k_eff = {nert.k[0]} ± {nert.k[1]")
 ```
+
+
 
 
 
