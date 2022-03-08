@@ -3,16 +3,17 @@ The Nonproprietary Educative Reactor model with THorium and Uranium fuel Salts, 
 
 ## deck.py
 
-the deck.py script contains the model for NERTHUS. It is designed to write and run the Serpent input, and easily obtain the results from each run.
+The deck.py script contains the model for NERTHUS. It is designed to write and run the Serpent input, and easily obtain the results from each run.
 
-#### Quick Start
+### Quick Start
 
 ```python
 from deck import serpDeck
 
 nert = serpDeck()
 nert.full_build_run()
-print(f"k_eff = {nert.k[0]} +- {nert.k[1]")
+nert.get_results()
+print(f"k_eff = {nert.k[0]} ± {nert.k[1]")
 ```
 
 
