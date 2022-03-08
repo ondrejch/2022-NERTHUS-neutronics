@@ -29,8 +29,6 @@ nert.full_build_run()
 
 ### Object Attributes
 
-The object attributes for the NERTHUS model
-
 ```python
 self.deck_name         = 'nerthus'                          # Serpent input file name
 self.qsub_name         = 'run.sh'                           # Shell file name which runs SERPENT
@@ -86,4 +84,82 @@ There is not yet support for partial insertion of control rods in the NERTHUS mo
 Note: the `get_results()` method retrieves the criticality constant, neutron generation time and the delayed neutron fractions which are stored in `self.k`, `self.ngt`, `self.beta_tot`, and `self.betas`, respectfully. When running the model without depletion, the variables are a list with the first value being the value returned from Serpent, and the second value being the associated error. When run with depletion, each value is a list of lists where each index stores the value and error at each depletion step.
 
 ## burn.py
+The burn.py script takes the NERTHUS model and uses it to calculate useful data pertaining to the fuel cycle.
+
+### Quick Start
+
+Calculating the critical enrichment, refuel rate and fuel salt feedback coefficients for the FLiBe-Nabe example from above.
+
+```python
+from burn import burn
+
+nert = burn('flibe', 'nabe')
+nert.get_enrichment()
+nert.get_refuel_rate()
+nert.get_feedbacks('fs.tot')
+```
+Note: The refuel rate and feedback calculations can take a while to run and submit lots of jobs, so if you are playing with the model, adjust `self.ngen`, `self.nskip` and `self.histories` to shorten the time it takes to run the model.
+
+
+### Object Attributes
+
+```python
+self.fuel_salt:str = fuel_salt
+self.refuel_salt:str = refuel_salt
+self.queue:str = 'fill'
+self.memory:int = 30
+self.ompcores:int = 8
+self.histories:int = 20000
+self.ngen:int = 200
+self.nskip:int = 60
+
+ # Enrichment search varibles
+self.enr_path:str = os.getcwd() + '/enr_search'
+self.enr_min:float = 0.01
+self.enr_max:float = 0.2
+self.enr_eps:float = 1e-9
+self.rho_tgt:float = 100.0
+self.rho_eps:float = 100.0
+self.conv_enr:float = None
+self.RhoData = namedtuple("rhoData", 'enr rho rho_err')
+self.rholist:list = []
+self.iter_max:int  = 20
+
+# refuel rate variales
+self.refuel_path:str = os.getcwd() + '/refuel'
+self.refuel_enr:float = .1
+self.refuel_min:float = 1e-10
+self.refuel_max:float = 1e-5
+self.refuel_eps:float = 1e-9
+self.k_diff_tgt:float = 0.003
+self.k_diff_eps:float = 0.003
+self.refuelData = namedtuple("refuelData", 'rate k k_err')
+self.refuel_list:list = []
+self.refuel_iter:int = 20
+
+# feedback coefficient variables
+self.feedback_path = os.getcwd() + '/feedback'
+self.feedback_temps:list = [800.0, 850.0, 900.0, 950.0, 1000.0]
+self.base_temp:float = 900.0
+self.feedback_runs:dict = {}
+self.burnup_steps:int = 72
+self.smoothing_window:int = 11
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
