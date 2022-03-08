@@ -36,19 +36,9 @@ nert.full_build_run()
 | self.nuc_libs | 'ENDF7' | Nuclear Data Library |
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+```python
+self.fs_lib = '09c'     # Cross section temperature selection for fuel salt
+```
 
 
 
