@@ -18,6 +18,15 @@ nert.get_results()
 print(f"k_eff = {nert.k[0]} ± {nert.k[1]")
 ```
 
+Running a depletion calculation starting with a FLiBe fuel salt and Refueling with a NaBe fuel salt.
+
+```python
+from deck import serpDeck
+
+nert = serpDeck(fuel_salt='flibe', enr=0.02, refuel_salt='nabe', enr_ref=0.1, refuel=True)
+nert.full_build_run()
+```
+
 
 
 
