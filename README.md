@@ -137,16 +137,16 @@ self.burnup_steps   = 72                              # Total number of burn-up 
 
 ### Object Methods
 
-| Method             | Purpose                                                                           |
-| ------------------ | --------------------------------------------------------------------------------- |
-| `get_enrichment()` | Writes the Serpent Input to the specified directory                               |
-| `save_enrs()` | Writes the shell file to run the model to the specified directory                 |
-| `read_enrs_if_done()`       | Runs the model                                                                    |
-| `get_refuel_rate()` | Saves the deck and shell file, and runs the deck (a combination of the previous 3)|
-| `save_refuel()`    | stores the results of a run into object attributes                                |
-| `read_refuel_if_done` | aasdf |
-| `get_feedbacks(feedback='fs.tot)`        | removes the directory and all files in the directory the model was run            | 
-| `read_feedbacks(feedback='fs.tot')` | asdf|
+| Method                              | Purpose                                                                                                    |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `get_enrichment()`                  | Calculates the critical enrichment of the fuel cycle                                                       |
+| `save_enrs()`                       | Saves critical enrichment so it can be used at a later date                                                |
+| `read_enrs_if_done()`               | Reads previously saved enrichment calculation                                                              |
+| `get_refuel_rate()`                 | Calculates the refuel rate needed to maintain criticality for the depletion calculation                    |
+| `save_refuel()`                     | Saves refuel rate so it can be used at a later date                                                        |
+| `read_refuel_if_done`               | Reads previously saved refuel rate                                                                         |
+| `get_feedbacks(feedback='fs.tot)`   | Runs all runs needed to calculate feedback coefficients (options: fs.tot, fs.dopp, fs.dens, gr.tot, total) | 
+| `read_feedbacks(feedback='fs.tot')` | Reads all feedback runs and calculates the feedback coefficient at each step                               |
 
 
 
