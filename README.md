@@ -140,11 +140,13 @@ self.burnup_steps   = 72                              # Total number of burn-up 
 | Method             | Purpose                                                                           |
 | ------------------ | --------------------------------------------------------------------------------- |
 | `get_enrichment()` | Writes the Serpent Input to the specified directory                               |
-| `save_enrs(save_file='enr_data.txt)` | Writes the shell file to run the model to the specified directory                 |
-| ``       | Runs the model                                                                    |
-| `` | Saves the deck and shell file, and runs the deck (a combination of the previous 3)|
-| ``    | stores the results of a run into object attributes                                |
-| ``        | removes the directory and all files in the directory the model was run            | 
+| `save_enrs()` | Writes the shell file to run the model to the specified directory                 |
+| `read_enrs_if_done()`       | Runs the model                                                                    |
+| `get_refuel_rate()` | Saves the deck and shell file, and runs the deck (a combination of the previous 3)|
+| `save_refuel()`    | stores the results of a run into object attributes                                |
+| `read_refuel_if_done` | aasdf |
+| `get_feedbacks(feedback='fs.tot)`        | removes the directory and all files in the directory the model was run            | 
+| `read_feedbacks(feedback='fs.tot')` | asdf|
 
 
 
