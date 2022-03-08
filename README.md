@@ -62,7 +62,7 @@ self.mod_boron         = 2e-6                               # Boron in graphite 
 self.refuel_rate       = 1e-9                               # Refuel rate of the reactor
 ```
 
-While most variable are self explanatory, some need more detail to be used. `self.burn_steps` is a list of lists where the first value of the internal lists are the number of times that step will be run, and the second value is the time-step of each run in days. For example `[[10, 1], [5, 30]]` will run 10 one day burn-up steps, and 5 thirty day burn-up steps totaling 160 day depletion.
+While most variable are self explanatory, some need more detail to be used. `self.burn_steps` is a list of lists where the first value of the internal lists are the number of times that step will be run, and the second value is the time-step of each run in days. For example `self.burn_steps = [[10, 1], [5, 30]]` will run 10 one day burn-up steps, and 5 thirty day burn-up steps totaling 160 day depletion.
 
 
 
