@@ -64,6 +64,7 @@ self.refuel_rate       = 1e-9                               # Refuel rate of the
 
 While most variable are self explanatory, some need more detail to be used. `self.burn_steps` is a list of lists where the first value of the internal lists are the number of times that step will be run, and the second value is the time-step of each run in days. For example `self.burn_steps = [[10, 1], [5, 30]]` will run 10 one day burn-up steps, and 5 thirty day burn-up steps totaling 160 day depletion.
 
+`self.control_rods` is a dictionary with each key, value pair corresponding to a control rod. When the value is 0, the control rod is removed. When the value is 1, the control rod is inserted. There is not yet support for partial insertion of control rods in the NERTHUS model.
 
 
 
