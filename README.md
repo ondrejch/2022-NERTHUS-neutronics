@@ -83,6 +83,7 @@ There is not yet support for partial insertion of control rods in the NERTHUS mo
 | `get_results()`    | stores the results of a run into object attributes                                |
 | `cleanup()`        | removes the directory and all files in the directory the model was run            | 
 
-Note: the `get_results()` method retrieves the criticality constant, neutron generation time and the total and delayed neutron fractions which are stored in `self.k`, `self.ngt`, `self.beta_tot`, and `self.betas`, respectfully. When running the model without depletion, the variables are a list with the first value being the value returned from serpent, and the second value being the associated error. When run with depletion, each value is a list of lists where each index corresponds to a depletion step.
+Note: the `get_results()` method retrieves the criticality constant, neutron generation time and the delayed neutron fractions which are stored in `self.k`, `self.ngt`, `self.beta_tot`, and `self.betas`, respectfully. When running the model without depletion, the variables are a list with the first value being the value returned from Serpent, and the second value being the associated error. When run with depletion, each value is a list of lists where each index stores the value and error at each depletion step.
 
+## burn.py
 
