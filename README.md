@@ -32,6 +32,17 @@ nert.full_build_run()
 | Variable     | Default Value | Place Holder                            |
 | ------------ | ------------- | ------------ |
 | self.deck_name | 'nerthus' | Serpent input file name |
+| self.qsub_name | 'run.sh' | Shell file name to run the deck |
+| self.nuc_libs | 'ENDF7' | Nuclear Data Library |
+
+
+
+
+
+
+
+
+
 
 
 
