@@ -74,14 +74,13 @@ There is not yet support for partial insertion of control rods in the NERTHUS mo
 ### Object Methods
 
 
-| Method | Purpose |
-| ------ | ------- |
-| `save_deck()` | Writes the Serpent Input to the specified directory |
-
-```python
-def save_deck()
-def save_qsub_file()
-def run_deck()
-```
+| Method             | Purpose                                                                           |
+| ------------------ | --------------------------------------------------------------------------------- |
+| `save_deck()`      | Writes the Serpent Input to the specified directory                               |
+| `save_qsub_file()` | Writes the shell file to run the model to the specified directory                 |
+| `run_deck()`       | Runs the model                                                                    |
+| `full_build_run()` | Saves the deck and qsub file, and runs the deck (a combination of the previous 3) |
+| `get_results()`    | stores the results of a run into object attributes                                |
+| `cleanup()`        | removes the directory and all files in the directory the model was run            | 
 
 
