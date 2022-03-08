@@ -48,7 +48,7 @@ self.thermal_expansion = True                               # Bool to include th
 self.refuel            = refuel                             # Bool to run burnup calculation
 self.feedback          = False                              # Bool to use restart file
 self.restart_file      = self.deck_name+".wrk"              # Name of restart file
-self.feedback_index    = 0                                  # Index of burnup step to read material definitions from
+self.feedback_index    = 0                                  # Index of burnup step to read material definitions from restart file
 self.do_plots          = False                              # Bool to plot core
 self.deck_path         = os.getcwd() + f'/{self.deck_name}' # Directory where SERPENT is ran
 self.add_to_deck       = ""                                 # Additional Serpent inputs you want to add to the deck
@@ -66,9 +66,17 @@ While most variable are self explanatory, some need more detail to be used.
 `self.burn_steps` is a list of lists where the first value of the internal lists are the number of times that step will be run, and the second value is the time-step of each run in days.
 For example `self.burn_steps = [[10, 1], [5, 30]]` will run 10 one day burn-up steps, and 5 thirty day burn-up steps totaling a 160 day depletion.
 
-`self.control_rods` is a dictionary with each key, value pair corresponding to a control rod. When the value is 0, the control rod is removed. When the value is 1, the control rod is inserted. There is not yet support for partial insertion of control rods in the NERTHUS model.
+`self.control_rods` is a dictionary with each key, value pair corresponding to a control rod.
+When the value is 0, the control rod is removed.
+When the value is 1, the control rod is inserted.
+There is not yet support for partial insertion of control rods in the NERTHUS model.
 
+### Object Methods
 
-
+```python
+def save_deck()
+def save_qsub_file()
+def run_deck()
+```
 
 
